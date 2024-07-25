@@ -7,6 +7,7 @@ import Searchbar from './Searchbar';
 function Navbar() {
     const Links = [
         {name:"Home",to:"/"},
+        {name:"Destination",to:"/destination"},
         {name:"About",to:"/about"},
         {name:"Contact",to:"/contact"},
       ];
@@ -14,11 +15,11 @@ function Navbar() {
     const normalLink = "text-gray-400 hover:text-gray-500";
 
     const [ menuOpen, setMenuOpen] = useState(false);
-    
+
     const handleToggleMenu = () => {
         setMenuOpen(!menuOpen);
       };
-    
+
     const handleCloseMenu = () => {
     setMenuOpen(false);
     };
@@ -31,17 +32,17 @@ function Navbar() {
                         <LuMenu className="block w-6 h-6 "/>
                     </button>
                 </div>
-                
+
                 <a className="text-xl flex leading-none" href="#">
                     <img src={logo} alt="logo" className='h-12 w-12'/>
                     <h1 className=' text-[#608BB7]  font-extrabold text-xl self-center whitespace-nowrap'>
                     Jelajah Wisata
                     </h1>
                 </a>
-                
+
                 <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
                 {Links.map( ( navlink ) => (
-                        <NavLink 
+                        <NavLink
                         key={navlink.name}
                         to={navlink.to}
                         className={({isActive}) => isActive ? activeLink : normalLink}>
@@ -54,7 +55,7 @@ function Navbar() {
                 </div>
             </nav>
             {menuOpen && (
-                <div className="lg:hidden">
+                <div className="lg:hidden z-50">
                 <div className="fixed inset-0 bg-gray-800 opacity-25"  ></div>
                 <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
                     <div className="flex items-center mb-5">
@@ -73,15 +74,15 @@ function Navbar() {
                         {Links.map( ( navlink ) => (
                             <li key={navlink.name}
                             className='block pl-3 p-2 text-lg font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded-full'>
-                                <NavLink 
+                                <NavLink
                                     to={navlink.to}
                                     className={({isActive}) => isActive ? activeLink : normalLink}>
                                     {navlink.name}
                                 </NavLink>
                             </li>
-                        ))}    
+                        ))}
                         </ul>
-                       
+
                     </div>
                 </nav>
                 </div>
