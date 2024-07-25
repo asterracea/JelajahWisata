@@ -28,7 +28,7 @@ function Navbar() {
         <div>
             <nav className="relative shadow-md px-10 py-2 flex justify-between items-center bg-white">
                 <div className="lg:hidden bg-[#608BB7] rounded-lg">
-                    <button className="navbar-burger flex items-center text-yellow-300 p-2" onClick={handleToggleMenu}>
+                    <button className="flex items-center text-yellow-300 p-2" onClick={handleToggleMenu}>
                         <LuMenu className="block w-6 h-6 "/>
                     </button>
                 </div>
@@ -57,7 +57,7 @@ function Navbar() {
             {menuOpen && (
                 <div className="lg:hidden z-50">
                 <div className="fixed inset-0 bg-gray-800 opacity-25"  ></div>
-                <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+                <nav className="fixed top-0 z-50 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
                     <div className="flex items-center mb-5">
                         <a className="mr-auto text-xl flex leading-none" href="#">
                             <img src={logo} alt="logo" className='h-10  w-10'/>
